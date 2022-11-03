@@ -10,7 +10,12 @@ def get_data() -> SlovenianQRCode:
     name = input(f"Enter name: ")
     street = input(f"Enter street: ")
     city = input(f"Enter city: ")
-    amount = float(input(f"Enter amount: "))
+    amount = input(f"Enter amount: ")
+
+    if amount:
+        amount = float(amount)
+    else:
+        amount = 0.0
 
     return SlovenianQRCode(iban=iban, reference=reference, date=date, description=description, code=code, name=name,
                            street=street, city=city, amount=amount)
